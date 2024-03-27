@@ -1,0 +1,110 @@
+@@ -0,0 +1,14 @@
+def  hitung_diskon ( total_belanja ):
+    jika  total_belanja  >=  250.000 :
+        diskon  =  total_belanja  *  50  /  100
+         diskon pengembalian
+    kalau tidak :
+        kembali  Tidak ada
+
+total_belanjaan  =  float ( input ( "Masukkan total belanjaan : Rp. " ))
+diskon  =  hitung_diskon ( total_belanjaan )
+
+jika  diskon  !=  Tidak ada :
+    print ( f"Diskon yang diterima: Rp { diskon } " )
+kalau tidak :
+    print ( f"Anda tidak mendapatkan diskon karena total belanjaan tidak mencapai Rp 250.000. Total belanjaan Anda: Rp { total_belanjaan } " )
+ 28 perubahan: 28 penambahan & 0 penghapusan28 
+latihan2modul4.py
+@@ -0,0 +1,28 @@
+def  hitung_nilai_akhir ( kehadiran , nilai_tugas , nilai_uts , nilai_uas ):
+    total_kehadiran  =  kehadiran  *  16
+    total_nilai_tugas  =  jumlah ( nilai_tugas ) /  len ( nilai_tugas )
+    nilai_akhir  =  total_kehadiran  +  total_nilai_tugas  +  nilai_uts  +  nilai_uas
+    kembalikan  nilai_akhir
+
+def  datang_hasil_nilai ( nilai_akhir ):
+    jika  nilai_akhir  >=  90 :
+        kembalikan  "A"
+    elif  nilai_akhir  >=  80 :
+        kembalikan  "B"
+    elif  nilai_akhir  >=  70 :
+        kembalikan  "C"
+    elif  nilai_akhir  >=  60 :
+        kembalikan  "D"
+    kalau tidak :
+        kembalikan  "E"
+
+kehadiran  =  int ( input ( "Masukkan jumlah kehadiran: " ))
+nilai_tugas  = [ float ( input ( f"Masukkan nilai tugas ke- { i + 1 } : " )) untuk  i  dalam  rentang ( 8 )]
+nilai_uts  =  float ( input ( "Masukkan nilai UTS: " ))
+nilai_uas  =  float ( input ( "Masukkan nilai UAS: " ))
+
+nilai_akhir  =  hitung_nilai_akhir ( kehadiran , nilai_tugas , nilai_uts , nilai_uas )
+hasil_nilai  =  didapat_hasil_nilai ( nilai_akhir )
+
+print ( f"Nilai akhir: { nilai_akhir } " )
+print ( f"Hasil nilai kelulusan: { hasil_nilai } " )
+ 61 perubahan: 61 penambahan & 0 penghapusan61 
+latihan3modul4.py
+@@ -0,0 +1,61 @@
+data_mahasiswa  = {
+    "1" : "1" ,
+}
+
+data_mata_kuliah  = {
+    "1" : "Pak Syarif" ,
+    "2" : "Pak Amal" ,
+    "3" : "Pak Yasir" ,
+    "4" : "Pak Chairil"
+}
+
+data_dosis  = {
+    "Pak Syarif" : {
+        "Mata Kuliah" : "Diskrit Matematika" ,
+        "Jam Perkuliahan" : "Senin, 08.00 - 10.00" ,
+        "Ruangan" : "JT01" ,
+        Mata Kuliah : Kalkulus ,
+        "Jam Perkuliahan" : "Jumat, 01.15 - 3.15" ,
+        "Ruangan" : "JT01"
+    },
+    "Pak Amal" : {
+        "Mata Kuliah" : "Logika Matematika" ,
+        "Jam Perkuliahan" : "Selasa, 10.00 - 12.00" ,
+        "Ruangan" : "JT02" ,
+    },
+    "Pak Yasir" : {
+        "Mata Kuliah" : "Dasar Pemrograman" ,
+        "Jam Perkuliahan" : "Rabu, 13.00 - 15.00" ,
+        "Ruangan" : "JT03" ,
+    },
+
+    "Pak Chairil" : {
+        "Mata Kuliah" : "Algoritma Dan Struktur Data" ,
+        "Jam Perkuliahan" : "Kamis, 08.00 - 10.00" ,
+        "Ruangan" : "Lab RPL" ,
+    }
+}
+
+nama pengguna  =  masukan ( "Masukkan nama pengguna: " )
+password  =  masukan ( "Masukkan password : " )
+
+jika  nama pengguna  di  data_mahasiswa  dan  data_mahasiswa [ nama pengguna ] ==  kata sandi :
+    print ( "Login berhasil!" )
+
+    print ( "Daftar Dosen Pengampuh :" )
+    untuk  mata_kuliah , dosen  di  data_mata_kuliah . item ():
+        print ( f" { mata_kuliah } . { dosen } " )
+
+    pilihan_mata_kuliah  =  input ( "Pilih untuk melihat detail dosen pengampuh: " )
+    jika  pilihan_mata_kuliah  di  data_mata_kuliah :
+        dosen_pengampuh  =  data_mata_kuliah [ pilihan_mata_kuliah ]
+        detail_dosen  =  data_dosen [ dosen_pengampuh ]
+        print ( f"Detail Dosen Pengampuh untuk Mata Kuliah ' { pilihan_mata_kuliah } ':" )
+        print ( f"Nama Dosen: { dosen_pengampuh } " )
+        print ( f"Mata Kuliah: { detail_dosen [ 'Mata Kuliah' ] } " )
+        print ( f"Jam Perkuliahan: { detail_dosen [ 'Jam Perkuliahan' ] } " )
+        print ( f"Ruangan: { detail_dosen [ 'Ruangan' ] } " )
+    kalau tidak :
+        print ( "Mata kuliah tidak ditemukan!" )
+kalau tidak :
+    print ( "Username atau password salah. Login gagal!" )
